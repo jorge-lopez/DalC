@@ -2,6 +2,8 @@
 <Roots >
   <Roots.PropertyPathNames>
     <RootPropertyPathName Name="CurrentConditions" />
+    <RootPropertyPathName Name="main" />
+    <RootPropertyPathName Name="temp" />
     <RootPropertyPathName Name="name" />
     <RootPropertyPathName Name="id" />
   </Roots.PropertyPathNames>

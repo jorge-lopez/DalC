@@ -19,36 +19,26 @@ namespace Kin.ViewModel
         }
 
 
-        public static List<WeatherCurrent> FetchData()
-        {
-            List<WeatherCurrent> lst = AsyncFetchData().Result;
-
-            return lst;
-
-            //var task = Task.Run(async () =>
-            //{
-            //    return await AsyncFetchData();
-            //});
-            //return task.Result;
-        }
-
-        public async static Task<List<WeatherCurrent>> AsyncFetchData()
-        //private static async void AsyncFetchData()
+        public static async Task<List<WeatherCurrent>> FetchData()
         {
 
-            HttpClient client = new HttpClient();
-            client.MaxResponseContentBufferSize = 256000;
-            HttpResponseMessage response = await client.GetAsync("http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&units=metric");
-            response.EnsureSuccessStatusCode();
+            Task<string> jsonDataTask = AsyncFetchData();
+            string jsonData = await jsonDataTask;
             
-            string jsonResponse = await response.Content.ReadAsStringAsync();
-            WeatherCurrent weather = JsonConvert.DeserializeObject<WeatherCurrent>(jsonResponse);
-
+            WeatherCurrent weather = JsonConvert.DeserializeObject<WeatherCurrent>(jsonData.ToString());
             List<WeatherCurrent> lst = new List<WeatherCurrent>();
 
             lst.Add(weather);
-
             return lst;
+
+        }
+
+        private static async Task<string> AsyncFetchData()
+        {
+            string url = "http://api.openweathermap.org/data/2.5/weather?q=Seoul,kr&units=metric";            
+            HttpClient client = new HttpClient();
+            string jsonResponse = await client.GetStringAsync(url);           
+            return jsonResponse;
         }
     }
 }

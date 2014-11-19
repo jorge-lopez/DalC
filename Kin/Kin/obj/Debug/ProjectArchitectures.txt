@@ -1,1 +1,1 @@
-c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Kin.csproj;neutral
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Kin.csproj;neutral

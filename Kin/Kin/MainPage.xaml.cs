@@ -28,12 +28,19 @@ namespace Kin
             this.InitializeComponent();
 
             InitializeComponent();
-            //This is where the magic happens
-            //Fill the viewModel with the data
-            var viewModel = new MainPageViewModel { CurrentConditions  = MainPageViewModel.AsyncFetchData() };
-            //Assign the viewModel with the data to the DataContext
-            //The bindings will be automatically done in the XAML
+
+            Binding();
+            
+            
+        }
+
+        private async void Binding()
+        {
+            var viewModel = new MainPageViewModel { CurrentConditions = await MainPageViewModel.FetchData() };
             DataContext = viewModel;
         }
+
+
+
     }
 }

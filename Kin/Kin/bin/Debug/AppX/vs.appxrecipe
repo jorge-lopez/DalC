@@ -7,7 +7,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>288e44e4-e9d2-4691-a4d1-306aa2794116</PackageIdentityName>
-    <IntermediateOutputPath>c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\obj\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\</IntermediateOutputPath>
     <RegisteredManifestChecksum>79AC5DE42B3D9606F0F0B6456A1C57060201E5EF81DFC7FE46CC40FCD3B8F3B9</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>288e44e4-e9d2-4691-a4d1-306aa2794116_1.0.0.0_neutral__mp4s1yh7xga86</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>288e44e4-e9d2-4691-a4d1-306aa2794116_mp4s1yh7xga86!App</RegisteredUserModeAppID>
@@ -17,82 +17,82 @@
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-11-12T07:21:48.721</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\Kin.exe">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.exe">
       <PackagePath>Kin.exe</PackagePath>
-      <Modified>2014-11-12T07:24:37.937</Modified>
+      <Modified>2014-11-19T10:04:58.785</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\packages\Newtonsoft.Json.6.0.6\lib\netcore45\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\packages\Newtonsoft.Json.6.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2014-11-12T07:16:14.131</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\Background.jpg">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\Background.jpg">
       <PackagePath>Assets\Background.jpg</PackagePath>
       <Modified>2014-11-04T03:52:21.199</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\BadgeLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <Modified>2014-11-12T05:57:08.977</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\DarkGray.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
       <Modified>2014-11-12T05:57:08.980</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\Dia.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\Dia.png">
       <PackagePath>Assets\Dia.png</PackagePath>
       <Modified>2014-11-04T16:43:21.159</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\LightGray.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\LightGray.png">
       <PackagePath>Assets\LightGray.png</PackagePath>
       <Modified>2014-11-12T05:57:08.716</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\Logo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-11-12T05:57:08.763</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\MediumGray.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\MediumGray.png">
       <PackagePath>Assets\MediumGray.png</PackagePath>
       <Modified>2014-11-12T05:57:08.766</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\SmallLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\SmallLogo.scale-100.png">
       <PackagePath>Assets\SmallLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-11-12T05:57:08.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\SplashScreen.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\SplashScreen.scale-100.png">
       <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-11-12T05:57:08.883</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\StoreLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\StoreLogo.scale-100.png">
       <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2014-11-12T05:57:08.937</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\Assets\WeatherLogo.scale-100.png">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\WeatherLogo.scale-100.png">
       <PackagePath>Assets\WeatherLogo.scale-100.png</PackagePath>
       <Modified>2014-11-04T17:50:28.566</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
       <Modified>2014-11-12T05:53:20.312</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-11-12T07:21:39.920</Modified>
+      <Modified>2014-11-19T10:04:58.568</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\Kin.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.xr.xml">
       <PackagePath>Kin.xr.xml</PackagePath>
-      <Modified>2014-11-12T07:00:46.474</Modified>
+      <Modified>2014-11-19T10:04:58.550</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <Modified>2014-11-12T07:21:47.169</Modified>
     </AppxPackagedFile>

@@ -34,3 +34,39 @@ c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\obj\Debug\Kin.cspro
 c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\Newtonsoft.Json.dll
 c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\bin\Debug\Newtonsoft.Json.xml
 c:\users\jorge\documents\visual studio 2013\Projects\Kin\Kin\obj\Debug\Kin.csproj.GenerateResource.Cache
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\App.xbf
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\MainPage.xbf
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.xr.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.exe
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.pdb
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\resources.pri
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\AppxManifest.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.build.appxrecipe
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\Kin.csprojResolveAssemblyReference.cache
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\App.g.i.cs
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\App.g.cs
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\MainPage.g.i.cs
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\MainPage.g.cs
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\XamlTypeInfo.g.cs
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\App.xaml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\App.xbf
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\XamlSaveStateFile.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\MainPage.xaml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\MainPage.xbf
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\Kin.exe
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\Kin.pdb
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\Kin.csproj.GenerateResource.Cache
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\priconfig.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\priconfig.xml.intermediate
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\layout.resfiles
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\layout.resfiles.intermediate
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\resources.resfiles
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\resources.resfiles.intermediate
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\pri.resfiles
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\pri.resfiles.intermediate
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\qualifiers.txt
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\qualifiers.txt.intermediate
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\obj\Debug\ProjectArchitectures.txt
