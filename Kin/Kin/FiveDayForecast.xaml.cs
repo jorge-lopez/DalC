@@ -1,4 +1,5 @@
-﻿using Kin.ViewModel;
+﻿using Kin.Model;
+using Kin.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,37 +22,24 @@ namespace Kin
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class FiveDayForecast : Page
     {
-        public MainPage()
+        public FiveDayForecast()
         {
             this.InitializeComponent();
 
-            InitializeComponent();
-
-            Binding();
-            
-            
+            cmbBox_WeatherConditions.ItemsSource = FiveDayForecastViewModel.WeatherConditions;
+            cmbBox_WeatherConditions.SelectedIndex = 0;
         }
-
-        private async void Binding()
+        private void Button_Search_Click(object sender, RoutedEventArgs e)
         {
-            var viewModel = new MainPageViewModel 
-            { 
-                CurrentConditions = await MainPageViewModel.FetchCurrentConditions(), 
-                Forecast = await MainPageViewModel.FetchTenDayForecast()
-            };
-            
-
-            DataContext = viewModel;
+            Result();   
         }
-
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private async void Result()
         {
-            this.Frame.Navigate(typeof(FiveDayForecast));
+            int selected = cmbBox_WeatherConditions.SelectedIndex;
+            string s = cmbBox_WeatherConditions.SelectedItem.ToString();
+            var viewModel = new FiveDayForecastViewModel { BestFitted = await FiveDayForecastViewModel.SearchBestFitted(s) };
         }
-
-
-
     }
 }

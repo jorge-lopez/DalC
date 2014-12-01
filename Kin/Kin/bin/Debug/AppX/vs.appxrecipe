@@ -20,13 +20,13 @@
     <AppXManifest Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2014-11-12T07:21:48.721</Modified>
+      <Modified>2014-12-01T10:54:18.052</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.exe">
       <PackagePath>Kin.exe</PackagePath>
-      <Modified>2014-11-19T10:04:58.785</Modified>
+      <Modified>2014-12-01T12:50:35.648</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\packages\Newtonsoft.Json.6.0.6\lib\netcore45\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -39,6 +39,10 @@
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
       <Modified>2014-11-12T05:57:08.977</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\city background.png">
+      <PackagePath>Assets\city background.png</PackagePath>
+      <Modified>2014-11-25T00:53:27.611</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
@@ -82,19 +86,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2014-11-12T05:53:20.312</Modified>
+      <Modified>2014-12-01T10:01:27.252</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\FiveDayForecast.xbf">
+      <PackagePath>FiveDayForecast.xbf</PackagePath>
+      <Modified>2014-12-01T10:01:27.252</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2014-11-19T10:04:58.568</Modified>
+      <Modified>2014-12-01T12:50:35.406</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\Kin.xr.xml">
       <PackagePath>Kin.xr.xml</PackagePath>
-      <Modified>2014-11-19T10:04:58.550</Modified>
+      <Modified>2014-12-01T12:49:55.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2014-11-12T07:21:47.169</Modified>
+      <Modified>2014-12-01T10:54:17.963</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

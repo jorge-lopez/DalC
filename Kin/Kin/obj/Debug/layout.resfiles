@@ -1,5 +1,6 @@
 Assets\Background.jpg
 Assets\BadgeLogo.scale-100.png
+Assets\city background.png
 Assets\DarkGray.png
 Assets\Dia.png
 Assets\LightGray.png
@@ -10,5 +11,6 @@ Assets\SplashScreen.scale-100.png
 Assets\StoreLogo.scale-100.png
 Assets\WeatherLogo.scale-100.png
 App.xbf
+FiveDayForecast.xbf
 Kin.xr.xml
 MainPage.xbf

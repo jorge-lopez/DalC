@@ -13,20 +13,49 @@
             <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Background.jpg"/>
         </Grid.Background>
 
-        <Grid Margin="100">
-            <ListBox ItemsSource="{Binding CurrentConditions}" Background="{x:Null}">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
-                            <TextBlock Text="{Binding Path=id}" />
-                            <TextBlock Text="{Binding Path=name}" />
-                            <TextBlock Text="{Binding Path=main.temp}" />
-                            
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+        <StackPanel Margin="30,30,30,673">
+            <Button x:ConnectionId='1' Content="Click to go to page 2"                              />
+        </StackPanel>
+
+
+        <Grid Margin="100,100,100,312">
+
+            <StackPanel Orientation="Vertical" >
+                <TextBlock Text="{Binding Path=CurrentConditions[0].name}" Foreground="WhiteSmoke" FontSize="45"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="{Binding Path=CurrentConditions[0].main.temp}" Foreground="WhiteSmoke" FontSize="30" />
+                    <TextBlock Text=" ºC" Foreground="WhiteSmoke" FontSize="30" />
+                </StackPanel>
+            </StackPanel>
+
         </Grid>
+
+
+        <Grid Margin="0,461,0,0">
+            <ScrollViewer>
+                <ItemsControl ItemsSource="{Binding Forecast}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Margin="20" Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical" Width="200" Height="200" Background="Black" Margin="10">
+                                <TextBlock Text="{Binding DayOfTheWeek}" FontSize="15" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,0"/>
+                                <TextBlock Text="{Binding Temperature.day}"  FontSize="30" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
+                                <TextBlock Text="{Binding Description[0].main}"  FontSize="20" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
+                                <TextBlock Text="{Binding Description[0].description}"  FontSize="15" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
+                            
+                            </StackPanel>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+
 
     </Grid>
 </Page>

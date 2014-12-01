@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\BadgeLogo.scale-100.png">
       <PackagePath>Assets\BadgeLogo.scale-100.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\city background.png">
+      <PackagePath>Assets\city background.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Assets\DarkGray.png">
       <PackagePath>Assets\DarkGray.png</PackagePath>
     </AppxPackagedFile>
@@ -61,6 +64,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\FiveDayForecast.xbf">
+      <PackagePath>FiveDayForecast.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
