@@ -1,1 +1,1 @@
-C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\Kin.csproj;neutral
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\Kin\DalC.csproj;neutral

@@ -1,0 +1,10 @@
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\DalCData.dll.config
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\DalCData.dll
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\DalCData.pdb
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\EntityFramework.dll
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\EntityFramework.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\obj\Debug\DalCData.dll
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\obj\Debug\DalCData.pdb
+C:\Users\Jorge\Documents\GitHub\DalC\Kin\DalCData\obj\Debug\DalCData.csprojResolveAssemblyReference.cache

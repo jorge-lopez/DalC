@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50771/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50771/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50771/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_AddTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTasksByDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksByDay" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTasksByDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTasksByDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSuggestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuggestion" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetSuggestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSuggestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateTask_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTask" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateTask_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSuggestionHits_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateSuggestionHits" />
+  </wsdl:message>
+  <wsdl:message name="IService_updateSuggestionHits_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateSuggestionHitsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="AddTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddTask" message="tns:IService_AddTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddTaskResponse" message="tns:IService_AddTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTasksByDay" message="tns:IService_GetTasksByDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTasksByDayResponse" message="tns:IService_GetTasksByDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSuggestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetSuggestion" message="tns:IService_GetSuggestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetSuggestionResponse" message="tns:IService_GetSuggestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateTask" message="tns:IService_updateTask_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateTaskResponse" message="tns:IService_updateTask_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSuggestionHits">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/updateSuggestionHits" message="tns:IService_updateSuggestionHits_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/updateSuggestionHitsResponse" message="tns:IService_updateSuggestionHits_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddTask">
+      <soap:operation soapAction="http://tempuri.org/IService/AddTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByDay">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTasksByDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSuggestion">
+      <soap:operation soapAction="http://tempuri.org/IService/GetSuggestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTask">
+      <soap:operation soapAction="http://tempuri.org/IService/updateTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSuggestionHits">
+      <soap:operation soapAction="http://tempuri.org/IService/updateSuggestionHits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:50771/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

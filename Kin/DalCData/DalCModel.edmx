@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DalCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="DayOfWeek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DayOfWeek" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Suggestion">
+          <Key>
+            <PropertyRef Name="IdSuggestion" />
+          </Key>
+          <Property Name="IdSuggestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdDayOfWeek" Type="int" Nullable="false" />
+          <Property Name="IdWeather" Type="int" Nullable="false" />
+          <Property Name="Suggestion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Hits" Type="int" />
+          <Property Name="SugestionTitle" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="IdTask" />
+          </Key>
+          <Property Name="IdTask" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="DueDate" Type="datetime" Nullable="false" />
+          <Property Name="Reminder" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Weather">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Weather" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Suggestion_DayOfWeek">
+          <End Role="DayOfWeek" Type="Self.DayOfWeek" Multiplicity="1" />
+          <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DayOfWeek">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Suggestion">
+              <PropertyRef Name="IdDayOfWeek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suggestion_Weather">
+          <End Role="Weather" Type="Self.Weather" Multiplicity="1" />
+          <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weather">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Suggestion">
+              <PropertyRef Name="IdWeather" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DalCModelStoreContainer">
+          <EntitySet Name="DayOfWeek" EntityType="Self.DayOfWeek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suggestion" EntityType="Self.Suggestion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Suggestion_DayOfWeek" Association="Self.FK_Suggestion_DayOfWeek">
+            <End Role="DayOfWeek" EntitySet="DayOfWeek" />
+            <End Role="Suggestion" EntitySet="Suggestion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suggestion_Weather" Association="Self.FK_Suggestion_Weather">
+            <End Role="Weather" EntitySet="Weather" />
+            <End Role="Suggestion" EntitySet="Suggestion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DalCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="DayOfWeek">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DayOfWeek1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Suggestions" Relationship="Self.FK_Suggestion_DayOfWeek" FromRole="DayOfWeek" ToRole="Suggestion" />
+        </EntityType>
+        <EntityType Name="Suggestion">
+          <Key>
+            <PropertyRef Name="IdSuggestion" />
+          </Key>
+          <Property Name="IdSuggestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdDayOfWeek" Type="Int32" Nullable="false" />
+          <Property Name="IdWeather" Type="Int32" Nullable="false" />
+          <Property Name="Suggestion1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SugestionTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DayOfWeek" Relationship="Self.FK_Suggestion_DayOfWeek" FromRole="Suggestion" ToRole="DayOfWeek" />
+          <NavigationProperty Name="Weather" Relationship="Self.FK_Suggestion_Weather" FromRole="Suggestion" ToRole="Weather" />
+          <Property Name="Hits" Type="Int32" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="IdTask" />
+          </Key>
+          <Property Name="IdTask" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Reminder" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Weather">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Weather1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Suggestions" Relationship="Self.FK_Suggestion_Weather" FromRole="Weather" ToRole="Suggestion" />
+        </EntityType>
+        <Association Name="FK_Suggestion_DayOfWeek">
+          <End Role="DayOfWeek" Type="Self.DayOfWeek" Multiplicity="1" />
+          <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DayOfWeek">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Suggestion">
+              <PropertyRef Name="IdDayOfWeek" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Suggestion_Weather">
+          <End Role="Weather" Type="Self.Weather" Multiplicity="1" />
+          <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Weather">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Suggestion">
+              <PropertyRef Name="IdWeather" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DalCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="DayOfWeeks" EntityType="Self.DayOfWeek" />
+          <EntitySet Name="Suggestions" EntityType="Self.Suggestion" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Tasks" EntityType="Self.Task" />
+          <EntitySet Name="Weathers" EntityType="Self.Weather" />
+          <AssociationSet Name="FK_Suggestion_DayOfWeek" Association="Self.FK_Suggestion_DayOfWeek">
+            <End Role="DayOfWeek" EntitySet="DayOfWeeks" />
+            <End Role="Suggestion" EntitySet="Suggestions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Suggestion_Weather" Association="Self.FK_Suggestion_Weather">
+            <End Role="Weather" EntitySet="Weathers" />
+            <End Role="Suggestion" EntitySet="Suggestions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DalCModelStoreContainer" CdmEntityContainer="DalCEntities">
+          <EntitySetMapping Name="DayOfWeeks">
+            <EntityTypeMapping TypeName="DalCModel.DayOfWeek">
+              <MappingFragment StoreEntitySet="DayOfWeek">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="DayOfWeek1" ColumnName="DayOfWeek" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suggestions">
+            <EntityTypeMapping TypeName="DalCModel.Suggestion">
+              <MappingFragment StoreEntitySet="Suggestion">
+                <ScalarProperty Name="Hits" ColumnName="Hits" />
+                <ScalarProperty Name="IdSuggestion" ColumnName="IdSuggestion" />
+                <ScalarProperty Name="IdDayOfWeek" ColumnName="IdDayOfWeek" />
+                <ScalarProperty Name="IdWeather" ColumnName="IdWeather" />
+                <ScalarProperty Name="Suggestion1" ColumnName="Suggestion" />
+                <ScalarProperty Name="SugestionTitle" ColumnName="SugestionTitle" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DalCModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tasks">
+            <EntityTypeMapping TypeName="DalCModel.Task">
+              <MappingFragment StoreEntitySet="Task">
+                <ScalarProperty Name="IdTask" ColumnName="IdTask" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="Reminder" ColumnName="Reminder" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Weathers">
+            <EntityTypeMapping TypeName="DalCModel.Weather">
+              <MappingFragment StoreEntitySet="Weather">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Weather1" ColumnName="Weather" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

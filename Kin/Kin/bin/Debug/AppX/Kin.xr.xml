@@ -1,19 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Nodes" />
-    <RootPropertyPathName Name="ItemName" />
-    <RootPropertyPathName Name="BestFitted" />
-    <RootPropertyPathName Name="city" />
-    <RootPropertyPathName Name="name" />
+    <RootPropertyPathName Name="SuggestionsList" />
+    <RootPropertyPathName Name="Id" />
+    <RootPropertyPathName Name="Title" />
     <RootPropertyPathName Name="Forecast" />
     <RootPropertyPathName Name="Description" />
-    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="main" />
     <RootPropertyPathName Name="Temperature" />
-    <RootPropertyPathName Name="day" />
-    <RootPropertyPathName Name="DayOfTheWeek" />
+    <RootPropertyPathName Name="min" />
+    <RootPropertyPathName Name="max" />
+    <RootPropertyPathName Name="ScheduledTasksList" />
+    <RootPropertyPathName Name="Content" />
+    <RootPropertyPathName Name="index" />
+    <RootPropertyPathName Name="DayOfWeek" />
     <RootPropertyPathName Name="CurrentConditions" />
+    <RootPropertyPathName Name="weather" />
+    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="temp" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -22,84 +25,91 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="Children" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
+      <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Children" />
       <RootProperty Name="Margin" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.ImageBrush">
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="ImageSource" />
-      <RootProperty Name="Opacity" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
-      <RootProperty Name="PlaceholderText" />
-      <RootProperty Name="AllowDrop" />
+      <RootProperty Name="Orientation" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Height" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
+      <RootProperty Name="Background" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Text" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="TextAlignment" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontWeight" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="HorizontalAlignment" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
+      <RootProperty Name="MinuteIncrement" />
+      <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
+      <RootProperty Name="Background" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Width" />
       <RootProperty Name="FontFamily" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="CommandParameter" />
       <RootEvent Name="Click" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="HorizontalScrollBarVisibility" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="SelectedIndex" />
+      <RootProperty Name="Items" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Background" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Text" />
-      <RootProperty Name="Background" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="FontSize" />
+      <RootEvent Name="Checked" />
+      <RootEvent Name="Unchecked" />
     </RootType>
+    <RootType FullName="System.String" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsControl">
       <RootProperty Name="ItemsSource" />
-      <RootProperty Name="Template" />
       <RootProperty Name="ItemsPanel" />
       <RootProperty Name="ItemTemplate" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Path" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ControlTemplate">
-      <RootProperty Name="Template" />
-    </RootType>
-    <RootType FullName="Kin.FiveDayForecast" />
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="Windows.UI.Xaml.Controls.ItemsPanelTemplate">
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.SolidColorBrush">
+      <RootProperty Name="Color" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+    </RootType>
+    <RootType FullName="Kin.CreateTask" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Kin.MainPage" />
   </Roots.RootTypes>

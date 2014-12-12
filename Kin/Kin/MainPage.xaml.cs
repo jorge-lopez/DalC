@@ -1,4 +1,5 @@
-﻿using Kin.ViewModel;
+﻿using Kin.Model;
+using Kin.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,44 +15,56 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
+
 
 namespace Kin
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+
     public sealed partial class MainPage : Page
     {
+        MainPageViewModel viewModel = new MainPageViewModel();
+
         public MainPage()
         {
             this.InitializeComponent();
-
             InitializeComponent();
-
             Binding();
-            
-            
         }
 
         private async void Binding()
         {
-            var viewModel = new MainPageViewModel 
-            { 
-                CurrentConditions = await MainPageViewModel.FetchCurrentConditions(), 
-                Forecast = await MainPageViewModel.FetchTenDayForecast()
+            viewModel = new MainPageViewModel
+            {
+                CurrentConditions = await MainPageViewModel.FetchCurrentConditions(),
+                Forecast = await MainPageViewModel.FetchTenDayForecast(),
+                ScheduledTasksList = await MainPageViewModel.FetchTasks()
             };
-            
 
             DataContext = viewModel;
+
+
+            try
+            {
+                var temp = viewModel.CurrentConditions.ElementAt(0);
+
+                this.txtBlk_Weather.Text = "℃";
+                this.txtBlk_Place.Text = temp.name + ", " + temp.sys.country; ;
+                this.txtBlk_DayName.Text = DateTime.Today.DayOfWeek.ToString();
+                this.txtBlk_Date.Text = DateTime.Now.ToString("MMMM d");
+            }
+            catch{}
         }
 
-        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        private void CreateTaskButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(FiveDayForecast));
+            Button btn = (Button)sender;
+            string value = btn.CommandParameter.ToString();
+            int index;
+            bool result = Int32.TryParse(value, out index);
+            if (result)
+            {
+                this.Frame.Navigate(typeof(CreateTask), viewModel.Forecast.ElementAt(index));
+            }
         }
-
-
-
     }
 }

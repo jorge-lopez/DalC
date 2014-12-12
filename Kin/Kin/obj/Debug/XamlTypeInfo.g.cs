@@ -13,13 +13,13 @@ namespace Kin
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        private global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider _provider;
 
         public global::Windows.UI.Xaml.Markup.IXamlType GetXamlType(global::System.Type type)
         {
             if(_provider == null)
             {
-                _provider = new global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByType(type);
         }
@@ -28,7 +28,7 @@ namespace Kin
         {
             if(_provider == null)
             {
-                _provider = new global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider();
+                _provider = new global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider();
             }
             return _provider.GetXamlTypeByName(fullName);
         }
@@ -40,7 +40,7 @@ namespace Kin
     }
 }
 
-namespace Kin.Kin_XamlTypeInfo
+namespace Kin.DalC_XamlTypeInfo
 {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks", "4.0.0.0")]    
@@ -125,13 +125,13 @@ namespace Kin.Kin_XamlTypeInfo
         private void InitTypeTables()
         {
             _typeNameTable = new string[4];
-            _typeNameTable[0] = "Kin.FiveDayForecast";
+            _typeNameTable[0] = "Kin.CreateTask";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "Kin.MainPage";
 
             _typeTable = new global::System.Type[4];
-            _typeTable[0] = typeof(global::Kin.FiveDayForecast);
+            _typeTable[0] = typeof(global::Kin.CreateTask);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::Kin.MainPage);
@@ -169,36 +169,36 @@ namespace Kin.Kin_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_FiveDayForecast() { return new global::Kin.FiveDayForecast(); }
+        private object Activate_0_CreateTask() { return new global::Kin.CreateTask(); }
         private object Activate_3_MainPage() { return new global::Kin.MainPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::Kin.Kin_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::Kin.Kin_XamlTypeInfo.XamlUserType userType;
+            global::Kin.DalC_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::Kin.DalC_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
             switch (typeIndex)
             {
 
-            case 0:   //  Kin.FiveDayForecast
-                userType = new global::Kin.Kin_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_FiveDayForecast;
+            case 0:   //  Kin.CreateTask
+                userType = new global::Kin.DalC_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_0_CreateTask;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::Kin.Kin_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::Kin.DalC_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Kin.Kin_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::Kin.DalC_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  Kin.MainPage
-                userType = new global::Kin.Kin_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType = new global::Kin.DalC_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_3_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
@@ -211,7 +211,7 @@ namespace Kin.Kin_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::Kin.Kin_XamlTypeInfo.XamlMember xamlMember = null;
+            global::Kin.DalC_XamlTypeInfo.XamlMember xamlMember = null;
             // No Local Properties
             return xamlMember;
         }
@@ -268,9 +268,9 @@ namespace Kin.Kin_XamlTypeInfo
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks", "4.0.0.0")]    
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::Kin.Kin_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::Kin.DalC_XamlTypeInfo.XamlSystemBaseType
     {
-        global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -284,7 +284,7 @@ namespace Kin.Kin_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -477,7 +477,7 @@ namespace Kin.Kin_XamlTypeInfo
     [System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -486,7 +486,7 @@ namespace Kin.Kin_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::Kin.Kin_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::Kin.DalC_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

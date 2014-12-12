@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DalCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DayOfWeek">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DayOfWeek" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Suggestion">
+    <Key>
+      <PropertyRef Name="IdSuggestion" />
+    </Key>
+    <Property Name="IdSuggestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdDayOfWeek" Type="int" Nullable="false" />
+    <Property Name="IdWeather" Type="int" Nullable="false" />
+    <Property Name="Suggestion" Type="nvarchar" MaxLength="150" />
+    <Property Name="Hits" Type="int" />
+    <Property Name="SugestionTitle" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="IdTask" />
+    </Key>
+    <Property Name="IdTask" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="150" />
+    <Property Name="DueDate" Type="datetime" Nullable="false" />
+    <Property Name="Reminder" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Weather" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Suggestion_DayOfWeek">
+    <End Role="DayOfWeek" Type="Self.DayOfWeek" Multiplicity="1" />
+    <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DayOfWeek">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suggestion">
+        <PropertyRef Name="IdDayOfWeek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suggestion_Weather">
+    <End Role="Weather" Type="Self.Weather" Multiplicity="1" />
+    <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Weather">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suggestion">
+        <PropertyRef Name="IdWeather" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DalCModelStoreContainer">
+    <EntitySet Name="DayOfWeek" EntityType="Self.DayOfWeek" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suggestion" EntityType="Self.Suggestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Task" EntityType="Self.Task" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Weather" EntityType="Self.Weather" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Suggestion_DayOfWeek" Association="Self.FK_Suggestion_DayOfWeek">
+      <End Role="DayOfWeek" EntitySet="DayOfWeek" />
+      <End Role="Suggestion" EntitySet="Suggestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suggestion_Weather" Association="Self.FK_Suggestion_Weather">
+      <End Role="Weather" EntitySet="Weather" />
+      <End Role="Suggestion" EntitySet="Suggestion" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -7,56 +7,83 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+
     <Grid>
+        <StackPanel>
+            <Grid Height="190" VerticalAlignment="Top" >
+                <Grid.Background>
+                    <SolidColorBrush Color="#0086D4" />
+                </Grid.Background>
 
-        <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/Background.jpg"/>
-        </Grid.Background>
 
-        <StackPanel Margin="30,30,30,673">
-            <Button x:ConnectionId='1' Content="Click to go to page 2"                              />
+                <Grid Margin="10,30,10,20">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Assets/Dia.png" />
+                        <StackPanel VerticalAlignment="Center" Margin="40,0,0,0" Orientation="Horizontal" Height="100">
+                            <TextBlock Text="{Binding CurrentConditions[0].main.temp}" Foreground="WhiteSmoke" FontSize="90"  FontWeight="Light" VerticalAlignment="Bottom"/>
+                            <TextBlock x:Name="txtBlk_Weather" Foreground="WhiteSmoke" FontSize="50"  FontWeight="Light" VerticalAlignment="Bottom" Margin="0,0,0,12"/>
+                        </StackPanel>
+                        <TextBlock Text="{Binding CurrentConditions[0].weather[0].description}" Foreground="WhiteSmoke" FontSize="40"  FontWeight="Light" VerticalAlignment="Center" Margin="50,0,0,-21"/>
+                    </StackPanel>
+
+
+                    <Grid Margin="10" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="txtBlk_DayName" Foreground="WhiteSmoke" FontSize="50" FontWeight="SemiBold" />
+                            <TextBlock x:Name="txtBlk_Date" Foreground="WhiteSmoke" FontSize="45" FontWeight="SemiLight" Margin="10,6"/>
+
+                        </StackPanel>
+                        <TextBlock x:Name="txtBlk_Place" Foreground="WhiteSmoke" FontSize="45" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+            <Grid Height="580">
+                <Grid.Background>
+                    <SolidColorBrush Color="#f3f3f3" />
+                </Grid.Background>
+
+
+                <ScrollViewer  VerticalScrollMode="Disabled">
+                    <ItemsControl ItemsSource="{Binding ScheduledTasksList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Margin="20" Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Vertical"  Width="200" Height="295" Margin="10" Background="White">
+                                    <Grid Background="#ff0433">
+                                        <TextBlock Text="{Binding Content[0].DayOfWeek}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,0" FontSize="30" FontWeight="SemiLight" />
+                                    </Grid>                                                                        
+                                    <ItemsControl ItemsSource="{Binding Content}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox Text="{Binding Title}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                    <Button x:ConnectionId='1' CommandParameter="{Binding Content[0].index}" Content="Create New Task" Background="#f25151" FontFamily="Global User Interface"                                 />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>                  
+                </ScrollViewer>
+            </Grid>
         </StackPanel>
 
 
-        <Grid Margin="100,100,100,312">
-
-            <StackPanel Orientation="Vertical" >
-                <TextBlock Text="{Binding Path=CurrentConditions[0].name}" Foreground="WhiteSmoke" FontSize="45"/>
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="{Binding Path=CurrentConditions[0].main.temp}" Foreground="WhiteSmoke" FontSize="30" />
-                    <TextBlock Text=" ºC" Foreground="WhiteSmoke" FontSize="30" />
-                </StackPanel>
-            </StackPanel>
-
-        </Grid>
-
-
-        <Grid Margin="0,461,0,0">
-            <ScrollViewer>
-                <ItemsControl ItemsSource="{Binding Forecast}">
-                    <ItemsControl.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <StackPanel Margin="20" Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ItemsControl.ItemsPanel>
-                    <ItemsControl.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Vertical" Width="200" Height="200" Background="Black" Margin="10">
-                                <TextBlock Text="{Binding DayOfTheWeek}" FontSize="15" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,0"/>
-                                <TextBlock Text="{Binding Temperature.day}"  FontSize="30" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
-                                <TextBlock Text="{Binding Description[0].main}"  FontSize="20" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
-                                <TextBlock Text="{Binding Description[0].description}"  FontSize="15" Height="Auto" HorizontalAlignment="Center" Margin="10,0"/>
-                            
-                            </StackPanel>
-                        </DataTemplate>
-                    </ItemsControl.ItemTemplate>
-                </ItemsControl>
-            </ScrollViewer>
-        </Grid>
-
-
-
     </Grid>
+
+
 </Page>
 

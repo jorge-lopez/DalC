@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DalCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="DayOfWeek">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayOfWeek1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Suggestions" Relationship="Self.FK_Suggestion_DayOfWeek" FromRole="DayOfWeek" ToRole="Suggestion" />
+  </EntityType>
+  <EntityType Name="Suggestion">
+    <Key>
+      <PropertyRef Name="IdSuggestion" />
+    </Key>
+    <Property Name="IdSuggestion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDayOfWeek" Type="Int32" Nullable="false" />
+    <Property Name="IdWeather" Type="Int32" Nullable="false" />
+    <Property Name="Suggestion1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="SugestionTitle" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DayOfWeek" Relationship="Self.FK_Suggestion_DayOfWeek" FromRole="Suggestion" ToRole="DayOfWeek" />
+    <NavigationProperty Name="Weather" Relationship="Self.FK_Suggestion_Weather" FromRole="Suggestion" ToRole="Weather" />
+    <Property Name="Hits" Type="Int32" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="IdTask" />
+    </Key>
+    <Property Name="IdTask" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Reminder" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Weather1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Suggestions" Relationship="Self.FK_Suggestion_Weather" FromRole="Weather" ToRole="Suggestion" />
+  </EntityType>
+  <Association Name="FK_Suggestion_DayOfWeek">
+    <End Role="DayOfWeek" Type="Self.DayOfWeek" Multiplicity="1" />
+    <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DayOfWeek">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suggestion">
+        <PropertyRef Name="IdDayOfWeek" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Suggestion_Weather">
+    <End Role="Weather" Type="Self.Weather" Multiplicity="1" />
+    <End Role="Suggestion" Type="Self.Suggestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Weather">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Suggestion">
+        <PropertyRef Name="IdWeather" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DalCEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DayOfWeeks" EntityType="Self.DayOfWeek" />
+    <EntitySet Name="Suggestions" EntityType="Self.Suggestion" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Tasks" EntityType="Self.Task" />
+    <EntitySet Name="Weathers" EntityType="Self.Weather" />
+    <AssociationSet Name="FK_Suggestion_DayOfWeek" Association="Self.FK_Suggestion_DayOfWeek">
+      <End Role="DayOfWeek" EntitySet="DayOfWeeks" />
+      <End Role="Suggestion" EntitySet="Suggestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Suggestion_Weather" Association="Self.FK_Suggestion_Weather">
+      <End Role="Weather" EntitySet="Weathers" />
+      <End Role="Suggestion" EntitySet="Suggestions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

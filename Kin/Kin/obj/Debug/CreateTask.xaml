@@ -1,0 +1,104 @@
+﻿<Page
+    x:Class="Kin.CreateTask"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Kin"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+
+
+    <Grid>
+        <StackPanel>
+            <Grid Height="190" VerticalAlignment="Top" >
+                <Grid.Background>
+                    <SolidColorBrush Color="#ff0433" />
+                </Grid.Background>
+
+
+                <Grid Margin="10,30,10,20">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Assets/Dia.png" />
+
+                        <StackPanel VerticalAlignment="Center" Margin="40,0,0,0" Orientation="Horizontal" Height="100">
+                            <TextBlock Text="{Binding Forecast[0].Temperature.max}" Foreground="WhiteSmoke" FontSize="70"  FontWeight="SemiLight" VerticalAlignment="Bottom" />
+                            <TextBlock x:Name="txtBlk_TempMin" Foreground="WhiteSmoke" FontSize="30"  FontWeight="SemiLight" VerticalAlignment="Bottom" Margin="0,0,0,12" />
+                            <TextBlock Text="/" Foreground="WhiteSmoke" FontSize="70"  FontWeight="Light" VerticalAlignment="Bottom" Margin="15,0,0,0"/>
+                            <TextBlock Text="{Binding Forecast[0].Temperature.min}" Foreground="WhiteSmoke" FontSize="70"  FontWeight="ExtraLight" VerticalAlignment="Bottom" Margin="15,0,0,0"/>
+                            <TextBlock x:Name="txtBlk_TempMax" Foreground="WhiteSmoke" FontSize="30"  FontWeight="ExtraLight" VerticalAlignment="Bottom" Margin="0,0,0,12"/>
+                        </StackPanel>
+
+
+                        <TextBlock Text="{Binding Forecast[0].Description[0].main}" Foreground="WhiteSmoke" FontSize="40"  FontWeight="Light" VerticalAlignment="Center" Margin="50,0,0,-21"/>
+                    </StackPanel>
+
+
+                    <Grid Margin="10" HorizontalAlignment="Right">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock x:Name="txtBlk_DayName" Foreground="WhiteSmoke" FontSize="50" FontWeight="SemiBold" />
+                            <TextBlock x:Name="txtBlk_Date" Foreground="WhiteSmoke" FontSize="45" FontWeight="SemiLight" Margin="10,6"/>
+
+                        </StackPanel>
+                        <TextBlock x:Name="txtBlk_Place" Foreground="WhiteSmoke" FontSize="45" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+
+            <Grid Height="580" Background="#f3f3f3">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <Button x:ConnectionId='3' Grid.Column="0"  Content="&#xE0BA;" FontFamily="Segoe UI Symbol" FontSize="50" Foreground="Black" VerticalAlignment="Top"                       BorderBrush="Transparent"/>
+                    <ItemsControl ItemsSource="{Binding SuggestionsList}">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Margin="20" HorizontalAlignment="Center"/>
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button CommandParameter="{Binding Id}" Content="{Binding Title}" FontSize="30" Background="Black"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+
+                </StackPanel>
+                <StackPanel Grid.Column="1" Margin="60">
+                    <TextBlock Text="Title" Foreground="Black" FontSize="30"/>
+                    <TextBox x:Name="txtBox_Title"/>
+                    <TextBlock Text="Description" Foreground="Black" FontSize="30"/>
+                    <TextBox x:Name="txtBox_Description"/>
+                    <TextBlock Text="Time" Foreground="Black" FontSize="30"/>
+                    <TimePicker x:Name="time_DueDate" MinuteIncrement="15" Margin="20"/>
+                    <TextBlock Text="Reminder" Foreground="Black" FontSize="30"/>
+                    <StackPanel Orientation="Horizontal">                        
+                        <ComboBox x:Name="cmbBox_Reminder" Foreground="Black" SelectedIndex="0" >
+                            <x:String>10 Minutes Before</x:String>
+                            <x:String>30 Minutes Before</x:String>
+                            <x:String>1 Hour Before</x:String>
+                            <x:String>2 Hour Before</x:String>
+                        </ComboBox>
+                        <CheckBox x:ConnectionId='2' x:Name="chk_Reminder" Content="No Reminder" Foreground="Black" FontSize="25"                                                                  />
+                    </StackPanel>
+
+                    <Button x:ConnectionId='1' Content="Create" Background="Green" FontSize="40"  HorizontalAlignment="Center"                            Margin="30
+                            "/>
+
+                </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
+
+
+
+</Page>
+
